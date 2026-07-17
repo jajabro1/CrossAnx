@@ -3,11 +3,11 @@ title: Home
 nav_order: 1
 ---
 
-# CrossInk
+# CrossAnx
 
-Welcome to CrossInk, a personal fork of CrossPoint Reader.
+Welcome to CrossAnx, a personal fork of CrossPoint Reader.
 
-[View on GitHub](https://github.com/uxjulia/CrossInk)
+[View on GitHub](https://github.com/uxjulia/CrossAnx)
 
 ## User Docs
 

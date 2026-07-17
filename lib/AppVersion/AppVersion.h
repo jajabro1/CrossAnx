@@ -2,12 +2,12 @@
 
 // PlatformIO normally supplies these through build_flags/extra_scripts. Keep
 // fallbacks here so editor indexers and simulator-like tools still parse files.
-#ifndef CROSSINK_VERSION
-#define CROSSINK_VERSION "dev"
+#ifndef CROSSANX_VERSION
+#define CROSSANX_VERSION "dev"
 #endif
 
-#ifndef CROSSINK_BUILD_ENV
-#define CROSSINK_BUILD_ENV "unknown"
+#ifndef CROSSANX_BUILD_ENV
+#define CROSSANX_BUILD_ENV "unknown"
 #endif
 
 #ifndef CROSSINK_FIRMWARE_VARIANT

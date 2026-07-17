@@ -50,11 +50,11 @@ Before this modification, I had koreader app on my phone set to sync to both the
 - Added ability to move finished books to "Read" folder.
 - In-book menu to quickly adjust reader options without having to exit the book.
 - Reading stats: total books read, total reading time, number of sessions, pages turned, average session time, pages turned per minute. You can also set your reading stats as your sleep screen.
-- All-time reading stats [syncing](./docs/reading-stats-sync.md) between two CrossInk devices.
-- Reading [progress sync](./docs/nearby-position-sync.md) between two CrossInk devices.
+- All-time reading stats [syncing](./docs/reading-stats-sync.md) between two CrossAnx devices.
+- Reading [progress sync](./docs/nearby-position-sync.md) between two CrossAnx devices.
 - Added customizable Auto Page Turn Interval (anything between 5-120 seconds).
 - Added ability to view Recent Books as a 3x3 grid view.
-- To view a more detailed list for each version, visit the [releases](https://github.com/uxjulia/CrossInk/releases) page to read release notes.
+- To view a more detailed list for each version, visit the [releases](https://github.com/uxjulia/CrossAnx/releases) page to read release notes.
 
 ---
 
@@ -87,7 +87,7 @@ Reader Options, Bionic Reading, Guide Dots, Force Paragraph Indents, reading sta
 
 ### Custom button actions
 
-CrossInk adds configurable button shortcuts.
+CrossAnx adds configurable button shortcuts.
 
 See [Controls](./docs/controls.md) for the full action list and defaults.
 
@@ -95,7 +95,7 @@ See [Controls](./docs/controls.md) for the full action list and defaults.
 
 ## Tips for the best reading experience
 
-CrossInk runs on an ESP32-C3 with limited RAM, so very large folders or complex EPUBs can be slower than they would be on a phone, tablet, or desktop app.
+CrossAnx runs on an ESP32-C3 with limited RAM, so very large folders or complex EPUBs can be slower than they would be on a phone, tablet, or desktop app.
 
 - Keep folders under about 200 files. For the smoothest browsing, aim for 50-100 files per folder.
 - Having 1000+ books on the SD card is fine if they are split into smaller folders, such as by author, series, genre, or read/unread status.
@@ -103,7 +103,7 @@ CrossInk runs on an ESP32-C3 with limited RAM, so very large folders or complex 
 - Text-first EPUBs are the best fit. Large image-heavy EPUBs, scanned books, comics, and omnibus files with thousands of sections may load slowly or fail under memory pressure.
 - As a rough target, EPUBs under 20 MB tend to work the best. Files over 50 MB may still work, but they are more likely to be slow or memory-sensitive, especially if they contain many large images.
 - If an EPUB is unusually slow, try [optimizing](./docs/webserver.md#epub-optimization) it with the built-in web optimizer (via File Transfer) before copying it to the SD card: remove unused high-resolution images, split very large omnibus files, and avoid embedding multiple full font families when possible.
-- Use a reliable SD card and leave some free space. CrossInk stores settings, reading progress, cache files, stats, and generated book data on the card.
+- Use a reliable SD card and leave some free space. CrossAnx stores settings, reading progress, cache files, stats, and generated book data on the card.
 
 ## Development Device Simulator
 
@@ -115,7 +115,7 @@ See [Simulator](./docs/simulator.md) for setup, platform notes, keyboard control
 
 ## Installation
 
-Download a `firmware-*.bin` from the [releases page](https://github.com/uxjulia/CrossInk/releases), then flash it with the web installer or command line.
+Download a `firmware-*.bin` from the [releases page](https://github.com/uxjulia/CrossAnx/releases), then flash it with the web installer or command line.
 
 See [Installation](./docs/installation.md) for step-by-step flashing and revert instructions.
 
@@ -140,7 +140,7 @@ See [Installation](./docs/installation.md) for step-by-step flashing and revert 
 
 ## Development quick start
 
-CrossInk uses PlatformIO for building and flashing firmware.
+CrossAnx uses PlatformIO for building and flashing firmware.
 
 See [Getting Started](./docs/contributing/getting-started.md) for prerequisites, clone setup, hooks, and validation commands.
 
@@ -160,6 +160,6 @@ See [Testing and Debugging](./docs/contributing/testing-debugging.md) for serial
 
 ## Internals
 
-The ESP32-C3 has about 380 KB of usable RAM, so CrossInk stores reusable book and device data on the SD card instead of rebuilding everything in memory.
+The ESP32-C3 has about 380 KB of usable RAM, so CrossAnx stores reusable book and device data on the SD card instead of rebuilding everything in memory.
 
 See [Data Cache](./docs/data-cache.md) for the `.crosspoint` layout and [File Formats](./docs/file-formats.md) for binary cache details.

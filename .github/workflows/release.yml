@@ -57,9 +57,9 @@ jobs:
           fi
           VERSION="${VERSION#v}"
           echo "RELEASE_VERSION=$VERSION" >> "$GITHUB_ENV"
-          sed -i "s/crossink_version = .*/crossink_version = $VERSION/" platformio.ini
+          sed -i "s/crossanx_version = .*/crossanx_version = $VERSION/" platformio.ini
 
-      - name: Build CrossInk
+      - name: Build CrossAnx
         env:
           CROSSPOINT_RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
         run: pio run -e tiny -e xlarge
@@ -84,19 +84,19 @@ jobs:
           fi
 
           install -m 700 -d ~/.ssh
-          printf '%s\n' "$CROSSINK_SIGNING_SSH_KEY" > ~/.ssh/crossink_actions_signing
-          chmod 600 ~/.ssh/crossink_actions_signing
-          ssh-keygen -y -f ~/.ssh/crossink_actions_signing > ~/.ssh/crossink_actions_signing.pub
+          printf '%s\n' "$CROSSINK_SIGNING_SSH_KEY" > ~/.ssh/crossanx_actions_signing
+          chmod 600 ~/.ssh/crossanx_actions_signing
+          ssh-keygen -y -f ~/.ssh/crossanx_actions_signing > ~/.ssh/crossanx_actions_signing.pub
 
           git config user.name "uxjulia"
           git config user.email "julia@uxj.io"
           git config gpg.format ssh
-          git config user.signingkey "$HOME/.ssh/crossink_actions_signing.pub"
+          git config user.signingkey "$HOME/.ssh/crossanx_actions_signing.pub"
 
           git fetch origin "$DEFAULT_BRANCH"
-          git worktree add ../crossink-pages "origin/$DEFAULT_BRANCH"
-          cp ".pio/build/catalog" "../crossink-pages/docs/catalog"
-          cd ../crossink-pages
+          git worktree add ../crossanx-pages "origin/$DEFAULT_BRANCH"
+          cp ".pio/build/catalog" "../crossanx-pages/docs/catalog"
+          cd ../crossanx-pages
           if git diff --quiet -- docs/catalog; then
             echo "docs/catalog is already current"
             exit 0

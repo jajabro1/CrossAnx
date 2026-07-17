@@ -68,7 +68,7 @@ def run_smoke(args: argparse.Namespace) -> int:
         print("Run: pio run -e simulator", file=sys.stderr)
         return 2
 
-    with tempfile.TemporaryDirectory(prefix="crossink-sim-smoke-") as temp_dir_name:
+    with tempfile.TemporaryDirectory(prefix="crossanx-sim-smoke-") as temp_dir_name:
         temp_root = Path(temp_dir_name)
         simulator_book_path = prepare_fs(temp_root, book)
 

@@ -116,7 +116,7 @@ uint8_t epubRenderModeDisplayIndex(const uint8_t renderMode) {
       return 1;
     case EpubRenderMode::Light:
       return 2;
-    case EpubRenderMode::CrossInkDefault:
+    case EpubRenderMode::CrossAnxDefault:
     default:
       return 0;
   }
@@ -130,7 +130,7 @@ uint8_t epubRenderModeForDisplayIndex(const uint8_t displayIndex) {
       return static_cast<uint8_t>(EpubRenderMode::Light);
     case 0:
     default:
-      return static_cast<uint8_t>(EpubRenderMode::CrossInkDefault);
+      return static_cast<uint8_t>(EpubRenderMode::CrossAnxDefault);
   }
 }
 
