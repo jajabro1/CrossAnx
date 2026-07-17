@@ -28,5 +28,5 @@ class KOReaderDocumentId {
 
  private:
   // Size of each chunk to read at a time
-  static constexpr size_t CHUNK_SIZE = 1024;
+  static constexpr size_t CHUNK_SIZE = 256;
 };

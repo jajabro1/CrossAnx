@@ -27,3 +27,9 @@ Keep this file focused on repo-specific gotchas that are worth reusing in future
 
 - POSIX TZ signs are inverted from ISO 8601 in `TimeStore::applyTimezone()`: `"UTC-1"` means UTC+1.
 - `LyraTheme::drawHeader()` does not call `BaseTheme::drawHeader()`, so header changes in the base theme must be duplicated in Lyra if needed.
+
+## Calibre Integration & Sync Hashing
+
+- **EPUB Metadata Modding:** Calibre's "Send to Device" modifies EPUB files on-the-fly (covers, series, IDs), causing size/MD5 mismatches with raw filesystem copies. Always pull from the Calibre OPDS server or copy directly from the destination WebDAV folder to ensure identical hashes.
+- **Cross-Subnet Discovery:** The wireless device plugin uses UDP/mDNS on startup. If Calibre is on a different subnet, set the Host IP manually in *Customize plugin* and **restart Calibre** to trigger connection.
+
